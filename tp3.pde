@@ -79,27 +79,6 @@ void draw() {
   }
 }
 
-void mousePressed() {
-  if (mostrarBoton &&
-      mouseX > botonX && mouseX < botonX + botonAncho &&
-      mouseY > botonY && mouseY < botonY + botonAlto) {
-    mostrarBoton = false;
-  }
-}
-
-void keyPressed() {
-  if (key == 'W' || key == 'w') {
-    reiniciarValores();
-  } else if (key == 'S' || key == 's') {
-    colorCuadrado = generarColorAleatorio();
-  } else if (key == 'D' || key == 'd') {
-    estadoAnimacion = 1;
-    velocidadRotacion += 0.01;
-  } else if (key == 'A' || key == 'a') {
-    estadoAnimacion = 1;
-  }
-}
-
 void reiniciarValores() {
   grilla = 152;
   inicioX = width / 2;
@@ -131,4 +110,25 @@ void dibujarBoton() {
   textAlign(CENTER, CENTER);
   textSize(16);
   text("INICIAR", botonX + botonAncho / 2, botonY + botonAlto / 2);
+}
+
+void mousePressed() {
+  if (mostrarBoton &&
+      mouseX > botonX && mouseX < botonX + botonAncho &&
+      mouseY > botonY && mouseY < botonY + botonAlto) {
+    mostrarBoton = false;
+  }
+}
+
+void keyPressed() {
+  if (key == 'W' || key == 'w') {
+    reiniciarValores();
+  } else if (key == 'S' || key == 's') {
+    colorCuadrado = generarColorAleatorio();
+  } else if (key == 'D' || key == 'd') {
+    estadoAnimacion = 1;
+    velocidadRotacion += 0.01;
+  } else if (key == 'A' || key == 'a') {
+    estadoAnimacion = 1;
+  }
 }
